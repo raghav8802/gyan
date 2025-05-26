@@ -6,6 +6,7 @@ import { useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { FaClock, FaBookOpen, FaUserGraduate, FaTag } from 'react-icons/fa'; // Importing icons
+import { getGoogleDriveImageUrl } from '@/utils/imageUtils';
 
 interface Course {
   _id: string;
@@ -65,7 +66,7 @@ export default function CoursePage() {
         <h1 className="text-3xl font-semibold text-gray-500 mb-4">{course.title}</h1>
         <div className="relative w-full h-48 mb-4">
           <Image
-            src={course.image}
+            src={getGoogleDriveImageUrl(course.image)}
             alt={course.title}
             fill
             className="object-cover rounded-md"

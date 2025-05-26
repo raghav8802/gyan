@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { FaArrowLeft } from 'react-icons/fa';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
+import { getGoogleDriveImageUrl } from '@/utils/imageUtils';
 
 interface BlogPost {
   _id: string;
@@ -101,7 +102,7 @@ export default function BlogPostPage() {
             <div className="h-96 bg-gradient-to-r from-primary/20 to-primary/5 rounded-lg overflow-hidden mb-8">
               <div className="relative w-full h-full">
                 <Image
-                  src={post.thumbnail}
+                  src={getGoogleDriveImageUrl(post.thumbnail)}
                   alt={post.title}
                   fill
                   className="object-cover"

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
+import { getGoogleDriveImageUrl } from '@/utils/imageUtils';
 
 interface BlogPost {
   _id: string;
@@ -119,7 +120,7 @@ export default function BlogPage() {
                 {post.thumbnail && (
                   <div className="relative w-full h-full">
                     <Image
-                      src={post.thumbnail}
+                      src={getGoogleDriveImageUrl(post.thumbnail)}
                       alt={post.title}
                       fill
                       className="object-cover"

@@ -1,4 +1,5 @@
 import JobsList from './JobsList';
+import { getGoogleDriveImageUrl } from '@/utils/imageUtils';
 
 async function getJobs() {
   try {

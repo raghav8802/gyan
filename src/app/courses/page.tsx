@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
+import { getGoogleDriveImageUrl } from '@/utils/imageUtils';
 
 interface Course {
   _id: string;
@@ -115,7 +116,7 @@ export default function CoursesPage() {
                 <div className="h-48 bg-gradient-to-r from-primary/20 to-primary/5">
                   <div className="relative w-full h-full">
                     <Image
-                      src={course.image}
+                      src={getGoogleDriveImageUrl(course.image)}
                       alt={course.title}
                       fill
                       className="object-cover"
